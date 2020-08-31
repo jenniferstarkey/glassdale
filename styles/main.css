@@ -1,0 +1,17 @@
+#criminal-card {
+    border: solid .5px;
+    margin: 1em;
+    padding: .5em;
+    /* line-height: 10px; */
+    flex-basis: 25%;
+    
+}
+.criminalsContainer{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+p {
+    line-height: 5px;
+    word-wrap: break-word;
+}
