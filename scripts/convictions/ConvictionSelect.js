@@ -7,14 +7,20 @@ import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
 // Get a reference to the DOM element where the <select> will be rendered
 
+const eventHub = document.querySelector(".container")
+const domElement = document.querySelector(".filters__crime");
 
-export const ConvictionSelect = () => {
-    getConvictions() 
-    .then ( convictionNames => {
-    const convictionsList = convictionNames;
-    const fullList = useConvictions(convictionsList);
-    
 
+    eventHub.addEventListener("change", event => {
+        if (event.target.id === "crimeSelect") {
+            const customEvent = new CustomEvent ("crimeChosen", {
+                detail: {
+                    crimeThatWasChosen: event.target.value
+                }
+            })
+            eventHub.dispatchEvent(customEvent)
+        }
+    })
 
 
     const render = (convictionsCollection) => {
@@ -31,10 +37,13 @@ export const ConvictionSelect = () => {
             </select>
         `
     }
-    
-    render(fullList)
+    export const ConvictionSelect = () => {
+        getConvictions() 
+        .then (() => {
+        const convictionsList = useConvictions()
+    render(convictionsList)
     }
 
     )}
     
-    const domElement = document.querySelector(".filters__crime");
+   
