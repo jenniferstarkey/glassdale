@@ -23,12 +23,12 @@ eventHub.addEventListener("crimeChosen", event => {
 
 //EVENT lISTENER FOR OFFICER CHOSEN//
 
-eventHub.addEventListener("officerSelect", event => {
-  if ("officerSelected" in event.detail){
+eventHub.addEventListener("officerSelected", event => {
+  if ("officer" in event.detail){
   const officerName = event.detail.officer
   const criminals = useCriminals()
   criminals.filter(criminalObject => {
-          if (criminalObject.officer === officerName) {
+          if (criminalObject.arrestingOfficer === officerName) {
               return true
   }
 })
