@@ -1,9 +1,15 @@
-#criminal-card {
-    border: solid .5px;
+main {
+    background-color: snow;
+}
+
+
+.criminal-card {
+    border: solid .5px blue;
     margin: 1em;
     padding: .5em;
     /* line-height: 10px; */
     flex-basis: 25%;
+    background-color: snow;
     
 }
 .criminalsContainer{
@@ -15,4 +21,31 @@ p {
     
     line-height: 12px;
     word-wrap: break-word;
+}
+
+aside {
+    float:right;
+    flex: 1;
+}
+
+.officersContainer{
+    display: flex;
+    flex-wrap: wrap;
+    border: solid .5px;
+    margin: 1em;
+    padding: .5em;
+    /* line-height: 10px; */
+    flex-basis: 25%;
+}
+.noteFormContainer {
+    background-color: lightslategray;
+}
+
+.noteListContainer {
+    background-color: snow;
+}
+
+.dropdown {
+    color: darkblue;
+    background-color: lightblue;
 }
